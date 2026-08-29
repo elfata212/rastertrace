@@ -22,6 +22,7 @@ dist/
 _diag.png
 .superpowers/
 .playwright-mcp/
+.playwright-artifacts/
 .claude/
 docs/superpowers/
 .codex/

@@ -66,6 +66,7 @@ js/view.js          zoom and pan
 pkg/                wasm-pack output (committed so Pages serves it as-is)
 wasm/               Rust wrapper crate around vtracer
 tests/              node --test unit tests
+e2e/                Playwright responsive-layout tests
 ```
 
 ## Develop
@@ -73,6 +74,7 @@ tests/              node --test unit tests
 ```bash
 npm ci                   # install the locked development dependencies
 npm test                 # unit tests (node --test)
+npm run test:responsive  # Playwright checks at desktop, laptop, tablet and mobile sizes
 npm run typecheck        # check JavaScript and DOM types
 npm run lint             # run Oxlint
 npm run format:check     # verify Oxfmt formatting
