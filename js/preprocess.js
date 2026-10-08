@@ -104,7 +104,7 @@ export const STOCK_PRESETS = Object.freeze({
   stockIllustration: {
     colors: 12, speckle: 10, layerDiff: 16, mode: "spline",
     cornerThreshold: 45, hierarchical: "stacked", pathPrecision: 2,
-    spliceThreshold: 34, upscale: 2, straighten: 0.6,
+    spliceThreshold: 35, lengthThreshold: 3.5, upscale: 2, straighten: 0.6,
   },
 });
 
