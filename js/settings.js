@@ -8,7 +8,7 @@ import {
   STOCK_PRESETS,
   sanitizeSettings,
   toGrayscaleColor,
-} from "./preprocess.js?v=49";
+} from "./preprocess.js?v=50";
 import { els, preferences } from "./context.js?v=8";
 import { refreshExport, updatePhysicalHeightOut } from "./exporters.js?v=13";
 import { setEyedropper } from "./cleanup-tools.js?v=17";
