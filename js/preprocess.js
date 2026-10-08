@@ -101,6 +101,11 @@ export const STOCK_PRESETS = Object.freeze({
     cornerThreshold: 50, hierarchical: "stacked", pathPrecision: 2,
     spliceThreshold: 40, upscale: 2, straighten: 0.9,
   },
+  stockIllustration: {
+    colors: 12, speckle: 10, layerDiff: 16, mode: "spline",
+    cornerThreshold: 45, hierarchical: "stacked", pathPrecision: 2,
+    spliceThreshold: 34, upscale: 2, straighten: 0.6,
+  },
 });
 
 // Purpose-based export profiles (SVG_EXPORT_RESEARCH.md). Values are
