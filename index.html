@@ -18,11 +18,11 @@
     <link rel="manifest" href="./site.webmanifest" />
 
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="RasterTrace" />
-    <meta property="og:title" content="RasterTrace - Convert Images to SVG Vectors in Browser" />
+    <meta property="og:site_name" content="Vector Stock Factory" />
+    <meta property="og:title" content="Vector Stock Factory - Raster to Vector for Stock" />
     <meta
       property="og:description"
-      content="Convert raster images to clean SVG vectors in your browser. Remove backgrounds, tune colors and export SVG, PNG, PDF or DXF. No uploads."
+      content="Convert raster images to clean SVG vectors in your browser. Prepare stock-ready artwork with cleanup, color control and export tools. No uploads."
     />
     <meta property="og:url" content="https://rastertrace.com/" />
     <meta property="og:image" content="https://rastertrace.com/og-image-v2.png" />
@@ -30,14 +30,14 @@
     <meta property="og:image:height" content="630" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="RasterTrace - Convert Images to SVG Vectors in Browser" />
+    <meta name="twitter:title" content="Vector Stock Factory - Raster to Vector for Stock" />
     <meta
       name="twitter:description"
       content="Convert raster images to clean SVG vectors in your browser. Remove backgrounds, tune colors and export SVG, PNG, PDF or DXF. No uploads."
     />
     <meta name="twitter:image" content="https://rastertrace.com/og-image-v2.png" />
 
-    <title>RasterTrace - Convert Images to SVG Vectors in Browser</title>
+    <title>Vector Stock Factory - Raster to Vector for Stock</title>
 
     <script type="application/ld+json">
       {
@@ -58,8 +58,8 @@
   <body>
     <header class="app-header">
       <div class="menubar">
-        <h1 class="brand" aria-label="RasterTrace home">
-          <img class="brand-mark" src="assets/logo.svg?v=2" alt="" /><span>rastertrace</span>
+        <h1 class="brand" aria-label="Vector Stock Factory home">
+          <img class="brand-mark" src="assets/logo.svg?v=2" alt="" /><span>Vector Stock Factory</span>
         </h1>
         <details class="app-menu">
           <summary>File</summary>
@@ -486,6 +486,22 @@
               </div>
             </dl>
           </section>
+ 
+          <section class="stock-qc" aria-labelledby="stock-qc-title">
+            <div class="stock-qc-head">
+              <h2 id="stock-qc-title">Stock Quality Gate</h2>
+              <strong id="qc-score">-</strong>
+            </div>
+            <dl class="stock-qc-grid">
+              <div><dt>Paths</dt><dd id="qc-paths">-</dd></div>
+              <div><dt>Tiny objects</dt><dd id="qc-tiny">-</dd></div>
+              <div><dt>Open paths</dt><dd id="qc-open">-</dd></div>
+              <div><dt>Duplicates</dt><dd id="qc-duplicates">-</dd></div>
+              <div><dt>Embedded raster</dt><dd id="qc-raster">-</dd></div>
+              <div><dt>Zero geometry</dt><dd id="qc-zero">-</dd></div>
+            </dl>
+            <p id="qc-level" class="stock-qc-level">Trace an image to evaluate stock readiness.</p>
+          </section>
 
           <div class="field rail-intro">
             <label
@@ -532,6 +548,8 @@
                   <option value="64">64 colors</option>
                   <option value="128">128 colors</option>
                   <option value="256">256 colors (all)</option>
+                  <option value="stockClean">Stock Clean (low path)</option>
+                  <option value="network">Network Illustration (balanced)</option>
                 </select>
               </div>
 
@@ -1155,10 +1173,10 @@
       <p id="status" role="status" aria-live="polite">Ready</p>
       <a
         class="repo-link"
-        href="https://github.com/bradsec/rastertrace"
+        href="https://github.com/elfata212/rastertrace"
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="RasterTrace on GitHub"
+        aria-label="Vector Stock Factory on GitHub"
       >
         <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
           <path

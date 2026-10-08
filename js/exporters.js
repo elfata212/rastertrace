@@ -2,9 +2,10 @@
 // the traced SVG, drives the result stats and action buttons, and saves
 // SVG/PNG/PDF/DXF through the File System Access API or a download.
 import { applyCleanupActions } from "./eraser.js?v=9";
-import { applyExportOptions, countPaths, physicalWidthValue } from "./preprocess.js?v=48";
+import { applyExportOptions, countPaths, physicalWidthValue } from "./preprocess.js?v=49";
 import { parseSvgPaths, toDxf, toPdf } from "./vectorexport.js?v=41";
 import { els, preferences, showError, state } from "./context.js?v=8";
+import { updateStockQualityGate } from "./stock-qc.js?v=1";
 
 const DISPLAY_UNITS_PER_INCH = { px: 96, in: 1, cm: 2.54, mm: 25.4 };
 
@@ -107,6 +108,7 @@ export function refreshExport() {
   const kb = blob.size / 1024;
   els.statPaths.textContent = paths.toLocaleString();
   els.statSize.textContent = kb >= 1024 ? `${(kb / 1024).toFixed(1)} MB` : `${kb.toFixed(0)} KB`;
+  updateStockQualityGate(state.svg);
   setResultActions(true);
   updatePhysicalHeightOut();
   return { paths };

@@ -89,6 +89,20 @@ export const PRESETS = Object.freeze({
   256: { colors: 256, speckle: 3, layerDiff: 10 },
 });
 
+// Stock-focused starting points tuned for commercial raster-to-vector cleanup.
+export const STOCK_PRESETS = Object.freeze({
+  stockClean: {
+    colors: 8, speckle: 18, layerDiff: 24, mode: "spline",
+    cornerThreshold: 55, hierarchical: "stacked", pathPrecision: 2,
+    spliceThreshold: 45, upscale: 2, straighten: 1.25,
+  },
+  network: {
+    colors: 12, speckle: 16, layerDiff: 20, mode: "spline",
+    cornerThreshold: 50, hierarchical: "stacked", pathPrecision: 2,
+    spliceThreshold: 40, upscale: 2, straighten: 0.9,
+  },
+});
+
 // Purpose-based export profiles (SVG_EXPORT_RESEARCH.md). Values are
 // applied to the visible controls like PRESETS: users can edit them
 // afterwards. pathPrecision/spliceThreshold feed the tracer directly;
