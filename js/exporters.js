@@ -2,7 +2,7 @@
 // the traced SVG, drives the result stats and action buttons, and saves
 // SVG/PNG/PDF/DXF through the File System Access API or a download.
 import { applyCleanupActions } from "./eraser.js?v=9";
-import { applyExportOptions, countPaths, physicalWidthValue } from "./preprocess.js?v=49";
+import { applyExportOptions, countPaths, physicalWidthValue } from "./preprocess.js?v=50";
 import { parseSvgPaths, toDxf, toPdf } from "./vectorexport.js?v=41";
 import { els, preferences, showError, state } from "./context.js?v=8";
 import { updateStockQualityGate } from "./stock-qc.js?v=1";
