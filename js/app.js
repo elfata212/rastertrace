@@ -1,6 +1,7 @@
 // App core: the trace loop, image loading and transforms, menu and
 // control wiring, and startup. Shared state lives in context.js; tools,
 // settings, export, and zoom/pan live in their own modules.
+import { analyzeStockVector } from "./stock-qc.js?v=1";
 import {
   bitmapOperationIsCurrent,
   capBitmap,
@@ -20,7 +21,7 @@ import {
   parseHexColor,
   PRESETS,
   toHexColor,
-} from "./preprocess.js?v=48";
+} from "./preprocess.js?v=49";
 import { $, els, hooks, preferences, showError, state } from "./context.js?v=8";
 import { refreshExport, setResultActions } from "./exporters.js?v=13";
 import {
@@ -78,6 +79,19 @@ tracer.onProgress = (label) => {
   els.veilStage.textContent = label;
   els.status.textContent = label;
 };
+
+function updateStockQualityGate(svg) {
+  const qc = analyzeStockVector(svg);
+  if (!qc) return;
+  els.qcScore.textContent = `${qc.score}/100`;
+  els.qcLevel.textContent = qc.level;
+  els.qcPaths.textContent = qc.paths.toLocaleString();
+  els.qcTiny.textContent = qc.tinyObjects.toLocaleString();
+  els.qcOpen.textContent = qc.openPaths.toLocaleString();
+  els.qcDuplicates.textContent = qc.duplicatePaths.toLocaleString();
+  els.qcRaster.textContent = qc.embeddedRaster ? `YES (${qc.embeddedRaster})` : "0";
+  els.qcZero.textContent = qc.zeroGeometry.toLocaleString();
+}
 
 async function retrace() {
   if (!state.bitmap) return;
