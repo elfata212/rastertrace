@@ -33,7 +33,7 @@
     <meta name="twitter:title" content="Vector Stock Factory - Raster to Vector for Stock" />
     <meta
       name="twitter:description"
-      content="Convert raster images to clean SVG vectors in your browser. Prepare stock-ready artwork with cleanup, color control and export tools. No uploads."
+      content="Convert raster images to clean SVG vectors in your browser. Remove backgrounds, tune colors and export SVG, PNG, PDF or DXF. No uploads."
     />
     <meta name="twitter:image" content="https://rastertrace.com/og-image-v2.png" />
 
@@ -43,7 +43,7 @@
       {
         "@context": "https://schema.org",
         "@type": "WebApplication",
-        "name": "Vector Stock Factory",
+        "name": "RasterTrace",
         "url": "https://rastertrace.com/",
         "description": "Convert PNG, JPEG, WebP, GIF and BMP images to clean SVG vectors in your browser. Remove backgrounds, tune colors and export SVG, PNG, PDF or DXF. No uploads.",
         "applicationCategory": "MultimediaApplication",
@@ -59,7 +59,7 @@
     <header class="app-header">
       <div class="menubar">
         <h1 class="brand" aria-label="Vector Stock Factory home">
-          <img class="brand-mark" src="assets/logo.svg?v=2" alt="" /><span>rastertrace</span>
+          <img class="brand-mark" src="assets/logo.svg?v=2" alt="" /><span>Vector Stock Factory</span>
         </h1>
         <details class="app-menu">
           <summary>File</summary>
@@ -486,7 +486,7 @@
               </div>
             </dl>
           </section>
-
+ 
           <section class="stock-qc" aria-labelledby="stock-qc-title">
             <div class="stock-qc-head">
               <h2 id="stock-qc-title">Stock Quality Gate</h2>
@@ -1279,7 +1279,7 @@
         </p>
         <a
           class="about-repo-link"
-          href="https://github.com/elfata212/rastertrace"
+          href="https://github.com/bradsec/rastertrace"
           target="_blank"
           rel="noopener noreferrer"
           >View rastertrace on GitHub</a
@@ -1296,7 +1296,7 @@
        worker cached an HTML fallback under a script URL during a deploy),
        app.js never runs and cannot recover itself. -->
     <script>
-      window.recoverVector Stock FactoryBoot = async () => {
+      window.recoverRasterTraceBoot = async () => {
         const marker = "rastertrace-boot-recovered";
         try {
           if (sessionStorage.getItem(marker)) return;
@@ -1319,6 +1319,6 @@
         location.reload();
       };
     </script>
-    <script type="module" src="js/app.js?v=91" onerror="window.recoverVector Stock FactoryBoot()"></script>
+    <script type="module" src="js/app.js?v=91" onerror="window.recoverRasterTraceBoot()"></script>
   </body>
 </html>
