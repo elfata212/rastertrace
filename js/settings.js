@@ -279,11 +279,22 @@ export function restoreSettings() {
 }
 
 export function applyPreset(name) {
-  const preset = PRESETS[name];
+  const preset = PRESETS[name] ?? STOCK_PRESETS[name];
   if (!preset) return;
-  els.colors.value = preset.colors;
-  els.speckle.value = preset.speckle;
-  els.layerDiff.value = preset.layerDiff;
+  if (preset.colors != null) els.colors.value = String(preset.colors);
+  if (preset.speckle != null) els.speckle.value = String(preset.speckle);
+  if (preset.layerDiff != null) els.layerDiff.value = String(preset.layerDiff);
+  if (preset.cornerThreshold != null) els.cornerThreshold.value = String(preset.cornerThreshold);
+  if (preset.straighten != null) els.straighten.value = String(preset.straighten);
+  if (preset.hierarchical != null) els.hierarchical.value = String(preset.hierarchical);
+  if (preset.upscale != null) els.upscale.value = String(preset.upscale);
+  if (preset.pathPrecision != null) els.pathPrecision.value = String(preset.pathPrecision);
+  if (preset.lengthThreshold != null) els.lengthThreshold.value = String(preset.lengthThreshold);
+  if (preset.spliceThreshold != null) els.spliceThreshold.value = String(preset.spliceThreshold);
+  if (preset.mode) {
+    const mode = radioEl(`input[name="mode"][value="${preset.mode}"]`);
+    if (mode) mode.checked = true;
+  }
   updateOutputs();
 }
 
