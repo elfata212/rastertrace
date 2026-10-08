@@ -1,7 +1,7 @@
 {
-  "name": "RasterTrace",
-  "short_name": "RasterTrace",
-  "description": "Convert raster images to clean SVG vectors entirely in your browser.",
+  "name": "Vector Stock Factory",
+  "short_name": "Vector Stock Factory",
+  "description": "Convert raster images to clean SVG vectors in your browser and prepare stock-ready artwork.",
   "start_url": ".",
   "display": "standalone",
   "background_color": "#17191d",
