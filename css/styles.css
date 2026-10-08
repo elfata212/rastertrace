@@ -1540,3 +1540,39 @@ dialog::backdrop {
     display: none;
   }
 }
+
+
+/* Stock Quality Gate */
+.stock-qc {
+  margin: 14px 0;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  background: var(--surface-1);
+}
+.stock-qc-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.stock-qc-head h2 { margin: 0; font-size: 0.95rem; }
+.stock-qc-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin: 0;
+}
+.stock-qc-grid > div {
+  padding: 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  background: var(--surface-2);
+}
+.stock-qc-grid dt { color: var(--text-faint); font-size: 0.72rem; }
+.stock-qc-grid dd { margin: 3px 0 0; font-weight: 700; }
+.stock-qc-level { margin: 10px 0 0; color: var(--text-dim); font-size: 0.8rem; }
+@media (max-width: 720px) {
+  .stock-qc-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
