@@ -21,7 +21,7 @@ import {
   parseHexColor,
   PRESETS,
   toHexColor,
-} from "./preprocess.js?v=49";
+} from "./preprocess.js?v=50";
 import { $, els, hooks, preferences, showError, state } from "./context.js?v=8";
 import { refreshExport, setResultActions } from "./exporters.js?v=13";
 import {
